@@ -15,7 +15,6 @@ class ProductController extends AbstractController
     // (name, price, stock, description, name du type, name de brand et toutes 
     // les images du produits.)
 
-
     /**
      * @Route("/front/products/", name="front_list_product")
      */
@@ -24,5 +23,15 @@ class ProductController extends AbstractController
         $products = $productRepository->findAll();
 
         return $this->render("front/products.html.twig", ['products' => $products]);
+    }
+
+    /**
+     * @Route("front/product/{id}", name="front_show_product")
+     */
+    public function showProduct(ProductRepository $productRepository, $id)
+    {
+        $product = $productRepository->find($id);
+
+        return $this->render("front/product.html.twig", ['product' => $product]);
     }
 }
