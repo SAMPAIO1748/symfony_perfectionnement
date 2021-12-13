@@ -4,6 +4,7 @@ namespace App\Controller\Front;
 
 use App\Repository\ProductRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ProductController extends AbstractController
@@ -33,5 +34,18 @@ class ProductController extends AbstractController
         $product = $productRepository->find($id);
 
         return $this->render("front/product.html.twig", ['product' => $product]);
+    }
+
+    /**
+     * @Route("/front/search/", name="front_search")
+     */
+    public function frontSearch(ProductRepository $productRepository, Request $request)
+    {
+        // Récupérer les données rentrées dans le formulaire
+        $term = $request->query->get('term');
+
+        $products = $productRepository->searchByTerm($term);
+
+        return $this->render('front/search.html.twig', ['products' => $products]);
     }
 }

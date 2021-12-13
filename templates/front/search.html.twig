@@ -1,0 +1,13 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	<h1>Les produits qui correspondent à votre recherche sont :</h1>
+
+	{% for product in products %}
+
+		{{ product.name }}
+
+	{% endfor %}
+
+{% endblock %}
