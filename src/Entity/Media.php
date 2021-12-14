@@ -34,6 +34,7 @@ class Media
 
     /**
      * @ORM\ManyToOne(targetEntity=Product::class, inversedBy="media")
+     * @ORM\JoinColumn(name="product_id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $product;
 
