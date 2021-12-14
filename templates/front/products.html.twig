@@ -11,6 +11,10 @@
 		<h3>{{product.type.name}}</h3>
 		<h3>{{product.brand.name}}</h3>
 	{% endfor %}
+	<hr>
 
+	{% for gproduct in gproducts.getAll %}
+		<h3>{{ gproduct.name }}</h3>
+	{% endfor %}
 
 {% endblock %}

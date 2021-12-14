@@ -3,6 +3,7 @@ twig:
 
   globals:
     batman: "Batman"
+    gproducts: '@App\Globals\Products'
 
 when@test:
   twig:
