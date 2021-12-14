@@ -16,9 +16,7 @@ class ProductController extends AbstractController
     // (name, price, stock, description, name du type, name de brand et toutes 
     // les images du produits.)
 
-    /**
-     * @Route("/front/products/", name="front_list_product")
-     */
+
     public function listProduct(ProductRepository $productRepository)
     {
         $products = $productRepository->findAll();
