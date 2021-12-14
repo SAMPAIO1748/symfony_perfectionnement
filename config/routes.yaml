@@ -21,3 +21,23 @@ admin_create_type:
 admin_delete_type:
   path: /admin/delete/type/{id}
   controller: App\Controller\Admin\AdminTypeController::deleteType
+
+admin_list_brand:
+  path: /admin/brands/
+  controller: App\Controller\Admin\AdminBrandController::listBrand
+
+admin_brand_show:
+  path: /admin/brand/{id}
+  controller: App\Controller\Admin\AdminBrandController::showBrand
+
+admin_update_brand:
+  path: /admin/update/brand/{id}
+  controller: App\Controller\Admin\AdminBrandController::updateBrand
+
+admin_create_brand:
+  path: /admin/create/brand/
+  controller: App\Controller\Admin\AdminBrandController::createBrand
+
+admin_delete_brand:
+  path: /admin/delete/brand/{id}
+  controller: App\Controller\Admin\AdminBrandController::deleteBrand

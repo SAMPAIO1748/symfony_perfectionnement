@@ -1,0 +1,20 @@
+{% extends "admin/base.html.twig" %}
+
+{% block main %}
+
+	{{batman}}
+
+	{% for brand in brands %}
+
+
+		<h2>{{ brand.name }}</h2>
+
+	{% endfor %}
+
+	<hr>
+
+	{% for gproduct in gproducts.getAll %}
+		<h3>{{ gproduct.name }}</h3>
+	{% endfor %}
+
+{% endblock %}
