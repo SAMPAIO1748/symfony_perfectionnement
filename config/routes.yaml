@@ -1,3 +1,23 @@
 front_list_product:
   path: /front/products/
   controller: App\Controller\Front\ProductController::listProduct
+
+admin_list_type:
+  path: /admin/types/
+  controller: App\Controller\Admin\AdminTypeController::listType
+
+admin_type_show:
+  path: /admin/type/{id}
+  controller: App\Controller\Admin\AdminTypeController::showType
+
+admin_update_type:
+  path: /admin/update/type/{id}
+  controller: App\Controller\Admin\AdminTypeController::updateType
+
+admin_create_type:
+  path: /admin/create/type/
+  controller: App\Controller\Admin\AdminTypeController::createType
+
+admin_delete_type:
+  path: /admin/delete/type/{id}
+  controller: App\Controller\Admin\AdminTypeController::deleteType

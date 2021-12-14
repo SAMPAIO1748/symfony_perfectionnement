@@ -41,11 +41,13 @@ class Product
 
     /**
      * @ORM\ManyToOne(targetEntity=Type::class, inversedBy="products")
+     * @ORM\JoinColumn(name="type_id", referencedColumnName="id" ,onDelete="CASCADE")
      */
     private $type;
 
     /**
      * @ORM\ManyToOne(targetEntity=Brand::class, inversedBy="products")
+     * @ORM\JoinColumn(name="brand_id", referencedColumnName="id" ,onDelete="CASCADE")
      */
     private $brand;
 
