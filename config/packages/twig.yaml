@@ -4,6 +4,8 @@ twig:
   globals:
     batman: "Batman"
     gproducts: '@App\Globals\Products'
+    gtypes: '@App\Globals\Types'
+    gbrands: '@App\Globals\Brands'
 
 when@test:
   twig:

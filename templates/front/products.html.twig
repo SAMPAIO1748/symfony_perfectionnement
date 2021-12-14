@@ -5,6 +5,18 @@
 
 	{{batman}}
 
+	{% for gtype in gtypes.getAll %}
+		<h3>{{ gtype.name }}</h3>
+	{% endfor %}
+
+	<hr>
+
+	{% for gbrand in gbrands.getAll %}
+		<h3>{{ gbrand.name }}</h3>
+	{% endfor %}
+
+	<hr>
+
 	{% for product in products %}
 		<h2>{{product.name}}</h2>
 		<h3>{{product.price}}</h3>
