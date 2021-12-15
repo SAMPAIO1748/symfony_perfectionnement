@@ -41,3 +41,11 @@ admin_create_brand:
 admin_delete_brand:
   path: /admin/delete/brand/{id}
   controller: App\Controller\Admin\AdminBrandController::deleteBrand
+
+front_list_command:
+  path: /front/commands/
+  controller: App\Controller\Front\CommandController::listCommand
+
+front_show_command:
+  path: /front/command/{id}
+  controller: App\Controller\Front\CommandController::showCommand

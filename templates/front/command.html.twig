@@ -1,0 +1,11 @@
+{% extends "front/base.html.twig" %}
+
+{% block main %}
+
+	<h2>{{ command.numberOrder }}</h2>
+
+	{% for product in command.products %}
+		<h3>{{ product.name }}</h3>
+	{% endfor %}
+
+{% endblock %}
