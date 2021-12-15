@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\BrandRepository;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -21,11 +22,25 @@ class Brand
 
     /**
      * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank(message="Le nom est obligatoire")
+     * @Assert\Length(
+     *  min = 5,
+     *  max = 50,
+     *  minMessage = "Le nom doit faire 5 caractères minimum",
+     *  maxMessage = "Le nom doit faire 50 caractères maximum" 
+     * )
      */
     private $name;
 
     /**
      * @ORM\Column(type="text")
+     * @Assert\NotBlank(message="La description est obligatoire")
+     * @Assert\Length(
+     *  min = 10,
+     *  max = 100,
+     *  minMessage = "La description doit faire 10 caractères minimum",
+     *  maxMessage = "La description doit faire 100 caractères maximum" 
+     * )
      */
     private $description;
 
