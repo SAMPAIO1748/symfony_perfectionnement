@@ -52,6 +52,13 @@ class AdminMediaController extends AbstractController
 
                 $media->setSrc($newFilename);
             }
+
+            $media->setAlt($mediaForm->get('title')->getData());
+
+            $entityManagerInterface->persist($media);
+            $entityManagerInterface->flush();
+
+            return $this->redirectToRoute("admin_product_list");
         }
 
         return $this->render('admin/mediaform.html.twig', ['mediaForm' => $mediaForm->createView()]);
