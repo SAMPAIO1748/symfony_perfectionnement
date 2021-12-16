@@ -12,7 +12,7 @@
 		<a
 			href="{{ path("product_like", {'id' : product.id}) }}" class="btn btn-link js-likes">
 			{# app.user est la variable qui enregistre le user connecté si 
-																																																		personne n'est connecté la variable est vide.#}
+																																																																				personne n'est connecté la variable est vide.#}
 			{% if app.user and product.isLikedByUser(app.user) %}
 				<i class="fas fa-thumbs-up"></i>
 			{% else %}
@@ -43,8 +43,14 @@ icone.classList.replace('fas', 'far');
 } else {
 icone.classList.replace('far', 'fas');
 }
-})
+}).catch(function (error) {
+if (error.response.status === 403) {
+window.alert("Connexion requise");
+} else {
+window.alert("Une erreur s'est produite");
+}
 
+})
 }
 
 document.querySelectorAll('a.js-likes').forEach(function (link) {
