@@ -10,11 +10,9 @@
 		<h3>{{product.type.name}}</h3>
 		<h3>{{product.brand.name}}</h3>
 		<a
-			href="#" class="btn btn-link js-likes">
-			{# 
-						app.user est la variable qui enregistre le user connecté si 
-						personne n'est connecté la variable est vide.
-					 #}
+			href="{{ path("product_like", {'id' : product.id}) }}" class="btn btn-link js-likes">
+			{# app.user est la variable qui enregistre le user connecté si 
+						personne n'est connecté la variable est vide.#}
 			{% if app.user and product.isLikedByUser(app.user) %}
 				<i class="fas fa-thumbs-up"></i>
 			{% else %}
