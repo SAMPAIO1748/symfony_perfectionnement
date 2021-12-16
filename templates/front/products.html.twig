@@ -3,30 +3,19 @@
 
 {% block main %}
 
-	{{batman}}
-
-	{% for gtype in gtypes.getAll %}
-		<h3>{{ gtype.name }}</h3>
-	{% endfor %}
-
-	<hr>
-
-	{% for gbrand in gbrands.getAll %}
-		<h3>{{ gbrand.name }}</h3>
-	{% endfor %}
-
-	<hr>
 
 	{% for product in products %}
 		<h2>{{product.name}}</h2>
 		<h3>{{product.price}}</h3>
 		<h3>{{product.type.name}}</h3>
 		<h3>{{product.brand.name}}</h3>
+		<a href="#" class="btn btn-link js-likes">
+			<i class="fas fa-thumbs-up"></i>
+			<span class="js-likes">10</span>
+			<span class="js-label">J'aime</span>
+		</a>
+		<hr>
 	{% endfor %}
-	<hr>
 
-	{% for gproduct in gproducts.getAll %}
-		<h3>{{ gproduct.name }}</h3>
-	{% endfor %}
 
 {% endblock %}
