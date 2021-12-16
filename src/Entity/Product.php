@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Repository\ProductRepository;
 use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
