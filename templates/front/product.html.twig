@@ -11,7 +11,7 @@
 
 	{% for image in product.media %}
 
-		<img src="{{ image.src }}" alt="{{ image.alt }}">
+		<img src="{{ asset('media/' ~ image.src) }}" alt="{{ image.alt }}">
 
 	{% endfor %}
 

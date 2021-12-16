@@ -39,7 +39,7 @@ class AdminMediaController extends AbstractController
                 // on utilise slug sur le nom original de l'image pour avoir un nom valide
                 $safeFilename = $sluggerInterface->slug($originalFilename);
                 // on ajoute un id unique au nom de l'image
-                $newFilename = $safeFilename . '-' . uniqid() . '-' . $mediaFile->guessExtension();
+                $newFilename = $safeFilename . '-' . uniqid() . '.' . $mediaFile->guessExtension();
 
 
                 // On déplace le fichier dans le dossier public/media
